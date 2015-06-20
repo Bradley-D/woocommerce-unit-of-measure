@@ -13,7 +13,7 @@ Text Domain: woocommerce-uom
 @author		 Bradley Davis
 @category    Admin
 @package	 WooCommerce RRP
-@since		 1.0
+@since		 1.0.1
 
 WooCommerce Unit Of Measure. A Plugin that works with the WooCommerce plugin for WordPress.
 Copyright (C) 2014 Bradley Davis - bd@bradley-davis.com
@@ -43,7 +43,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	class Woo_UOM {
 		/**
 		 * The Constructor!
-		 * @since 1.0
+		 * @since 1.0.1
 		 */
 		public function __construct() {
 			add_action( 'woocommerce_product_options_general_product_data', array( &$this, 'woo_uom_product_fields' ) );
@@ -87,7 +87,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 		/**
 		 * Render the output
-		 * @since 1.0
+		 * @since 1.0.1
 		 * @return $price + UOM string
 		 */
 		public function woo_uom_render_output( $price ) {

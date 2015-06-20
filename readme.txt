@@ -37,3 +37,13 @@ Yes you can, follow these steps:
 
 = Can I add a unit of measure to a variation, downloadable or virtual product? =
 Accept for a product variation, yes you can.
+
+== Changelog ==
+
+= 1.0.1 =
+* Removed error on line 96, passed a variable that was not needed to the woo_uom_render_output function
+* Removed the conditional statement from the constructor
+* Renamed the return variable in the woo_uom_render_output function
+
+= 1.0 =
+* Original commit and released to the world
