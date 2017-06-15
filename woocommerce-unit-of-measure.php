@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: WooCommerce Unit Of Measure
-Plugin URI: 
+Plugin URI:
 Description: WooCommerce Unit Of Measure allows the user to add a unit of measure after the price on WooCommerce products
-Version: 1.0.1
+Version: 1.0.2
 Author: Bradley Davis
 Author URI: http://bradley-davis.com
 License: GPL3
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: woocommerce-uom
 
 @author		 Bradley Davis
-@category    Admin
+@category   Admin
 @package	 WooCommerce RRP
 @since		 1.0.1
 
@@ -58,16 +58,16 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 		 */
 		public function woo_uom_product_fields() {
 		  global $woocommerce, $post;
-		  
-			echo '<div class="wc_uom_input">'; 
-				// Woo_UOM fields will be created here. 
-				woocommerce_wp_text_input( 
-					array( 
-						'id'          => '_woo_uom_input', 
-						'label'       => __( 'Unit of Measure', 'woo_uom' ), 
+
+			echo '<div class="wc_uom_input">';
+				// Woo_UOM fields will be created here.
+				woocommerce_wp_text_input(
+					array(
+						'id'          => '_woo_uom_input',
+						'label'       => __( 'Unit of Measure', 'woo_uom' ),
 						'placeholder' => '',
 						'desc_tip'    => 'true',
-						'description' => __( 'Enter your unit of measure for this product here.', 'woo_uom' ) 
+						'description' => __( 'Enter your unit of measure for this product here.', 'woo_uom' )
 					)
 				);
 			echo '</div>';
@@ -80,9 +80,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 		public function woo_uom_save_field_input( $post_id ){
 			// Woo_UOM text field
 			$woo_uom_input = $_POST['_woo_uom_input'];
-			if ( ! empty( $woo_uom_input ) ) :
 				update_post_meta( $post_id, '_woo_uom_input', esc_attr( $woo_uom_input ) );
-			endif;
 		}
 
 		/**
