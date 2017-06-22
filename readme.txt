@@ -3,11 +3,11 @@ Contributors: Brad Davis
 Tags: woocommerce, woocommerce-price
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.0.2
+Stable tag: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-WooCommerce Unit Of Measure allows you to add a unit of measure, or any text after the price in WooCommerce.
+WooCommerce Unit Of Measure allows you to add a unit of measure, or any text after the price of a WooCommerce product.
 
 == Description ==
 WooCommerce Unit Of Measure allows you to add a unit of measure (UOM), or any text you require after the price in WooCommerce.
@@ -19,12 +19,16 @@ WooCommerce Unit Of Measure allows you to add a unit of measure (UOM), or any te
 = WooCommerce Compatibility Test: v3.0.8 =
 1. Upload WooCommerce Image Hover to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. That's it.
+3. Go to "Inventory" tab in the product data area and put in your unit of measure
+4. Publish or update your product
+5. That's it.
 
 == Frequently Asked Questions ==
+= Where will the unit of measure output on the product? =
+After the price.
 
-= Will this work with my theme? =
-Hard to say really, so many themes to test so little time.
+= Can I add a unit of measure to a simple or variation product? =
+Yes you can. At this stage you can not change the unit of measure per variation but you can add a "global" (displays on all variations) like unit for the product.
 
 = Can I upload the unit of measure text when with WooCommerce CSV Import Suite? =
 Yes you can, follow these steps:
@@ -32,10 +36,15 @@ Yes you can, follow these steps:
 - Add the following title to your new column, meta:_woo_uom_input
 - Fill your column with your required unit of measure or whatever text you want to add after the price for your product
 
-= Can I add a unit of measure to a variation, downloadable or virtual product? =
-Accept for a product variation, yes you can.
+= Will this work with my theme? =
+Hard to say really, so many themes to test so little time.
 
 == Changelog ==
+= 1.1 =
+* Moved uom input to Inventory tab so it is available on simple and variable products
+* Removed the &nbsp; from the output for accessibility reasons
+* Updated some FAQ and descriptions
+
 = 1.0.2 =
 * Removed if empty check on save so unit of measure can be removed
 

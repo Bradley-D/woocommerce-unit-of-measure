@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Unit Of Measure
 Plugin URI:
 Description: WooCommerce Unit Of Measure allows the user to add a unit of measure after the price on WooCommerce products
-Version: 1.0.2
+Version: 1.1
 Author: Bradley Davis
 Author URI: http://bradley-davis.com
 License: GPL3
@@ -13,7 +13,7 @@ Text Domain: woocommerce-uom
 @author		 Bradley Davis
 @category   Admin
 @package	 WooCommerce RRP
-@since		 1.0.1
+@since		 1.0
 
 WooCommerce Unit Of Measure. A Plugin that works with the WooCommerce plugin for WordPress.
 Copyright (C) 2014 Bradley Davis - bd@bradley-davis.com
@@ -46,7 +46,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 		 * @since 1.0.1
 		 */
 		public function __construct() {
-			add_action( 'woocommerce_product_options_general_product_data', array( &$this, 'woo_uom_product_fields' ) );
+			add_action( 'woocommerce_product_options_inventory_product_data', array( &$this, 'woo_uom_product_fields' ) );
 			add_action( 'woocommerce_process_product_meta', array( &$this, 'woo_uom_save_field_input' ) );
 			// Render the uom field output on the frontend
 			add_filter( 'woocommerce_get_price_html', array( &$this, 'woo_uom_render_output' ) );
@@ -93,7 +93,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 			// Display Custom Field Value
 			$woo_uom_output = get_post_meta( $post->ID, '_woo_uom_input', true );
 
-			return $price . '&nbsp;' . $woo_uom_output;
+			return $price . ' ' . $woo_uom_output;
 		}
 	} // END class Woo_UOM
 
