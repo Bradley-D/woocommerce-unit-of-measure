@@ -3,12 +3,14 @@
 Plugin Name: WooCommerce Unit Of Measure
 Plugin URI:
 Description: WooCommerce Unit Of Measure allows the user to add a unit of measure after the price on WooCommerce products
-Version: 1.1
+Version: 1.4
 Author: Bradley Davis
 Author URI: http://bradley-davis.com
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: woocommerce-uom
+WC requires at least: 3.0.0
+WC tested up to: 3.2.4
 
 @author		 Bradley Davis
 @category   Admin
@@ -80,7 +82,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 		public function woo_uom_save_field_input( $post_id ){
 			// Woo_UOM text field
 			$woo_uom_input = $_POST['_woo_uom_input'];
-				update_post_meta( $post_id, '_woo_uom_input', esc_attr( $woo_uom_input ) );
+			update_post_meta( $post_id, '_woo_uom_input', esc_attr( $woo_uom_input ) );
 		}
 
 		/**
@@ -90,10 +92,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 		 */
 		public function woo_uom_render_output( $price ) {
 			global $woocommerce, $post;
-			// Display Custom Field Value
-			$woo_uom_output = get_post_meta( $post->ID, '_woo_uom_input', true );
-
-			return $price . ' ' . $woo_uom_output;
+			//Check if uom_pro is installed
+			if ( in_array( 'wc-unit-measure-pro/wc-unit-measure-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
+				return $price;
+			else :
+				// Display Custom Field Value
+				$woo_uom_output = get_post_meta( $post->ID, '_woo_uom_input', true );
+				return $price . ' ' . '<span class="uom">' . $woo_uom_output . '</span>';
+			endif;
 		}
 	} // END class Woo_UOM
 
