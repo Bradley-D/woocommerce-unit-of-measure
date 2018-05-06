@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Unit Of Measure
 Plugin URI:
 Description: WooCommerce Unit Of Measure allows the user to add a unit of measure after the price on WooCommerce products
-Version: 1.4
+Version: 2.0
 Author: Bradley Davis
 Author URI: http://bradley-davis.com
 License: GPL3
@@ -43,65 +43,25 @@ endif;
  */
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
 	class Woo_UOM {
-		/**
-		 * The Constructor!
-		 * @since 1.0.1
-		 */
-		public function __construct() {
-			add_action( 'woocommerce_product_options_inventory_product_data', array( &$this, 'woo_uom_product_fields' ) );
-			add_action( 'woocommerce_process_product_meta', array( &$this, 'woo_uom_save_field_input' ) );
-			// Render the uom field output on the frontend
-			add_filter( 'woocommerce_get_price_html', array( &$this, 'woo_uom_render_output' ) );
-		}
 
-		/**
-		 * Add the custom fields or the UOM to the prodcut general tab
-		 * @since 1.0
-		 */
-		public function woo_uom_product_fields() {
-		  global $woocommerce, $post;
+    /**
+     * The Constructor!
+     * @since 1.0.1
+     */
+    public function __construct() {
+      $this->uom_class_loader();
+    }
 
-			echo '<div class="wc_uom_input">';
-				// Woo_UOM fields will be created here.
-				woocommerce_wp_text_input(
-					array(
-						'id'          => '_woo_uom_input',
-						'label'       => __( 'Unit of Measure', 'woo_uom' ),
-						'placeholder' => '',
-						'desc_tip'    => 'true',
-						'description' => __( 'Enter your unit of measure for this product here.', 'woo_uom' )
-					)
-				);
-			echo '</div>';
-		}
+    /**
+     * Add the classes that make the magic
+     * @since 2.0
+     */
+    function uom_class_loader() {
+      require_once trailingslashit( dirname( __FILE__ ) ) . 'classes/class-uom-product-input.php';
+      require_once trailingslashit( dirname( __FILE__ ) ) . 'classes/class-uom-product-output.php';
+    }
 
-		/**
-		 * Update the database with the new input
-		 * @since 1.0
-		 */
-		public function woo_uom_save_field_input( $post_id ){
-			// Woo_UOM text field
-			$woo_uom_input = $_POST['_woo_uom_input'];
-			update_post_meta( $post_id, '_woo_uom_input', esc_attr( $woo_uom_input ) );
-		}
-
-		/**
-		 * Render the output
-		 * @since 1.0.1
-		 * @return $price + UOM string
-		 */
-		public function woo_uom_render_output( $price ) {
-			global $woocommerce, $post;
-			//Check if uom_pro is installed
-			if ( in_array( 'wc-unit-measure-pro/wc-unit-measure-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
-				return $price;
-			else :
-				// Display Custom Field Value
-				$woo_uom_output = get_post_meta( $post->ID, '_woo_uom_input', true );
-				return $price . ' ' . '<span class="uom">' . $woo_uom_output . '</span>';
-			endif;
-		}
-	} // END class Woo_UOM
+  } // END class Woo_UOM
 
 	// Instantiate the class
 	$woo_uom = new Woo_UOM();
