@@ -3,7 +3,7 @@ Contributors: Brad Davis
 Tags: woocommerce, woocommerce-price
 Requires at least: 4.0
 Tested up to: 4.9.5
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,6 +40,10 @@ Yes you can, follow these steps:
 Hard to say really, so many themes to test so little time.
 
 == Changelog ==
+
+= 2.1 =
+* Added conditional to determine product type
+* Removed conditional for uom pro...oh it is still on the way
 
 = 2.0 =
 * Tested on WordPress v4.9.5
