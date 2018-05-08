@@ -19,7 +19,6 @@ class Woo_Uom_Output {
    */
   function uom_add_actions_filters() {
     add_filter( 'woocommerce_get_price_html', array( &$this, 'woo_uom_render_output' ), 10, 2 );
-		//add_filter( 'woocommerce_cart_item_price', array( &$this, 'woo_uom_variation_output_cart' ), 10, 3 );
   }
 
 	/**
