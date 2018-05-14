@@ -26,18 +26,16 @@ class Woo_Uom_Output {
 	 * @since 1.0.1
 	 * @return $price + UOM string
 	 */
-	 function woo_uom_render_output( $price, $product ) {
-	  global $woocommerce, $post;
-	  // Get product type
-	  $uom_product_type = $product->is_type( 'variable' );
+	 function woo_uom_render_output( $price ) {
+	  global $post;
 	  // Check if uom text exists
 	  $woo_uom_output = get_post_meta( $post->ID, '_woo_uom_input', true );
 	  // Check if variable OR UOM text exists
-	  if ( ( true === $uom_product_type ) || ( ! $woo_uom_output ) ) :
-	    return $price;
+	  if ( $woo_uom_output ) :
+			$woo_uom_price_string = $price . ' ' . '<span class="uom">' . $woo_uom_output . '</span>';
+			return $woo_uom_price_string;
 	  else :
-	    $woo_uom_price_string = $price . ' ' . '<span class="uom">' . $woo_uom_output . '</span>';
-	    return $woo_uom_price_string;
+			return $price;
 	  endif;
 	}
 
