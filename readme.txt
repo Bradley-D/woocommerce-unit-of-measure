@@ -3,7 +3,7 @@ Contributors: Brad Davis
 Tags: woocommerce, woocommerce-price
 Requires at least: 4.0
 Tested up to: 4.9.6
-Stable tag: 2.4
+Stable tag: 2.4.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -41,8 +41,10 @@ Hard to say really, so many themes to test so little time.
 
 == Changelog ==
 
+= 2.4.1 =
+* Reverted location so input is available as a global for multiple product types.....sorry for confusion.
+
 = 2.4 =
-* User input is now in the general tab under the price/sale price
 * Tested on WordPress v4.9.6
 * Tested on WooCommerce v3.4.1
 
