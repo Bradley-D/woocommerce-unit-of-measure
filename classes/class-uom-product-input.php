@@ -18,7 +18,7 @@ class Woo_Uom_Input {
    * @since 1.0.1
    */
   function uom_add_actions_filters() {
-    add_action( 'woocommerce_product_options_inventory_product_data', array( &$this, 'woo_uom_product_fields' ) );
+    add_action( 'woocommerce_product_options_pricing', array( &$this, 'woo_uom_product_fields' ) );
     add_action( 'woocommerce_process_product_meta', array( &$this, 'woo_uom_save_field_input' ) );
   }
 
