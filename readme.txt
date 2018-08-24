@@ -3,7 +3,7 @@ Contributors: Brad Davis
 Tags: woocommerce, woocommerce-price
 Requires at least: 4.0
 Tested up to: 4.9.8
-Stable tag: 2.4.2
+Stable tag: 2.4.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,6 +40,9 @@ Yes you can, follow these steps:
 Hard to say really, so many themes to test so little time.
 
 == Changelog ==
+
+= 2.4.3 =
+* added translation function around user input
 
 = 2.4.2 =
 * Added screenshot of backend input location and frontend result
