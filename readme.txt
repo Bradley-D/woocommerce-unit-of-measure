@@ -2,7 +2,7 @@
 Contributors: Brad Davis
 Tags: woocommerce, woocommerce-price
 Requires at least: 4.0
-Tested up to: 4.9.6
+Tested up to: 4.9.8
 Stable tag: 2.4.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -13,11 +13,11 @@ WooCommerce Unit Of Measure allows you to add a unit of measure, or any text aft
 WooCommerce Unit Of Measure allows you to add a unit of measure (UOM), or any text you require after the price in WooCommerce.
 
 = Requires WooCommerce to be installed. =
-= WooCommerce Compatibility Test: v3.4.1 =
+= WooCommerce Compatibility Test: v3.4.4 =
 
 == Installation ==
-= WooCommerce Compatibility Test: v3.4.1 =
-1. Upload WooCommerce Image Hover to the `/wp-content/plugins/` directory
+= WooCommerce Compatibility Test: v3.4.4 =
+1. Upload WooCommerce Unit Of Measure to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to "Inventory" tab in the product data area and put in your unit of measure
 4. Publish or update your product
@@ -40,6 +40,11 @@ Yes you can, follow these steps:
 Hard to say really, so many themes to test so little time.
 
 == Changelog ==
+
+= 2.4.2 =
+* Added screenshot of backend input location and frontend result
+* Tested on WordPress v4.9.8
+* Tested on WooCommerce v3.4.4
 
 = 2.4.1 =
 * Reverted location so input is available as a global for multiple product types.....sorry for confusion.
