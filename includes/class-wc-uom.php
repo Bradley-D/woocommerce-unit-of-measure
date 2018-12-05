@@ -34,8 +34,8 @@ class Wc_Uom {
 	 * @since 3.0.0
 	 */
 	public function wc_uom_requires() {
-		require_once trailingslashit( dirname( __FILE__ ) ) . 'admin/class-uom-admin.php';
-		require_once trailingslashit( dirname( __FILE__ ) ) . 'public/class-uom-public.php';
+		require_once plugin_dir_path( trailingslashit( dirname( __FILE__ ) ) ) . 'admin/class-wc-uom-admin.php';
+		require_once plugin_dir_path( trailingslashit( dirname( __FILE__ ) ) ) . 'public/class-wc-uom-public.php';
 	}
 
 }
