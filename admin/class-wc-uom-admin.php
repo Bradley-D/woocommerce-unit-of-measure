@@ -43,6 +43,9 @@ class WC_UOM_Admin {
 	 * @since 3.0.0
 	 */
 	public function wc_uom_product_fields() {
+		// Security..... make sure the form request comes from the right place people.
+		wp_nonce_field( basename( __FILE__ ), 'wc_uom_product_fields_nonce' );
+
 		echo '<div class="wc_uom_input">';
 			// Woo_UOM fields will be created here.
 			woocommerce_wp_text_input(
@@ -63,6 +66,11 @@ class WC_UOM_Admin {
 	 * @since 1.0
 	 */
 	public function wc_uom_save_field_input( $post_id ) {
+		// If our nonce isn't there, or we can't verify it, its time to split.
+		if ( ! isset( $_POST['wc_uom_product_fields_nonce'] ) || ! wp_verify_nonce( $_POST['wc_uom_product_fields_nonce'], basename( __FILE__ ) ) ) :
+			return;
+		endif;
+
 		// Woo_UOM text field.
 		$woo_uom_input = $_POST['_woo_uom_input'];
 		update_post_meta( $post_id, '_woo_uom_input', esc_attr( $woo_uom_input ) );
