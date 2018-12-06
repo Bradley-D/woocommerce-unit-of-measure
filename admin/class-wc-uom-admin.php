@@ -64,16 +64,13 @@ class WC_UOM_Admin {
 	 * Update the database with the new input
 	 *
 	 * @since 1.0
+	 * @param int $post_id Used to save the input field to a specific id.
 	 */
 	public function wc_uom_save_field_input( $post_id ) {
-		// If our nonce isn't there, or we can't verify it, its time to split.
-		if ( ! isset( $_POST['wc_uom_product_fields_nonce'] ) || ! wp_verify_nonce( $_POST['wc_uom_product_fields_nonce'], basename( __FILE__ ) ) ) :
-			return;
+		if ( isset( $_POST['_woo_uom_input'], $_POST['wc_uom_product_fields_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['wc_uom_product_fields_nonce'] ), basename( __FILE__ ) ) ) :
+			$woo_uom_input = sanitize_text_field( wp_unslash( $_POST['_woo_uom_input'] ) );
+			update_post_meta( $post_id, '_woo_uom_input', esc_attr( $woo_uom_input ) );
 		endif;
-
-		// Woo_UOM text field.
-		$woo_uom_input = $_POST['_woo_uom_input'];
-		update_post_meta( $post_id, '_woo_uom_input', esc_attr( $woo_uom_input ) );
 	}
 
 }
