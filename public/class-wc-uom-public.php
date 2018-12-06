@@ -55,7 +55,6 @@ class WC_UOM_Public {
 			return $price;
 		endif;
 	}
-
 }
 
 /**
