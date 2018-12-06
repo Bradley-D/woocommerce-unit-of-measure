@@ -72,7 +72,6 @@ class WC_UOM_Admin {
 			update_post_meta( $post_id, '_woo_uom_input', esc_attr( $woo_uom_input ) );
 		endif;
 	}
-
 }
 
 /**
