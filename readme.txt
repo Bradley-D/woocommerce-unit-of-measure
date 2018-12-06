@@ -42,6 +42,7 @@ Hard to say really, so many themes to test so little time.
 
 = 3.0.0 =
 * WPCS refactor
+* Removed translation function from output on front end variables as they can not be translated
 
 = 2.4.3 =
 * added translation function around user input
