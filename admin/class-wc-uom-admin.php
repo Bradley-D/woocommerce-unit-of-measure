@@ -4,7 +4,7 @@
  *
  * @author     Bradley Davis
  * @package    WooCommerce_RRP
- * @subpackage WooCommerce_RRP/includes
+ * @subpackage WooCommerce_RRP/admin
  * @since      3.0.0
  */
 
