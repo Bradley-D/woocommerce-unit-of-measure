@@ -16,10 +16,10 @@ msgstr ""
 "esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: classes/class-uom-product-input.php:37
+#: admin/class-wc-uom-admin.php:54
 msgid "Unit of Measure"
 msgstr ""
 
-#: classes/class-uom-product-input.php:40
+#: admin/class-wc-uom-admin.php:57
 msgid "Enter your unit of measure for this product here."
 msgstr ""
