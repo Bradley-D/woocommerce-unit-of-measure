@@ -2,7 +2,7 @@
 Contributors: Brad Davis
 Tags: woocommerce, woocommerce-price
 Requires at least: 4.0
-Tested up to: 4.9.8
+Tested up to: 5.0.1
 Stable tag: 3.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -15,7 +15,6 @@ WooCommerce Unit Of Measure allows you to add a unit of measure (UOM), or any te
 = Requires WooCommerce to be installed. =
 
 == Installation ==
-= WooCommerce Compatibility Test: v3.4.4 =
 1. Upload WooCommerce Unit Of Measure to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to "Inventory" tab in the product data area and put in your unit of measure
