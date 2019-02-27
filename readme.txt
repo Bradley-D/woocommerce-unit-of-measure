@@ -2,8 +2,8 @@
 Contributors: Brad Davis
 Tags: woocommerce, woocommerce-price
 Requires at least: 4.0
-Tested up to: 5.0.1
-Stable tag: 3.0.0
+Tested up to: 5.1
+Stable tag: 3.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,6 +38,10 @@ Yes you can, follow these steps:
 Hard to say really, so many themes to test so little time.
 
 == Changelog ==
+
+= 3.0.1 =
+* Tested on WordPress 5.1
+* Tested on WooCommerce 3.5.5
 
 = 3.0.0 =
 * WPCS refactor
